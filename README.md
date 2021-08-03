@@ -148,3 +148,5 @@ You can modify the `.github/workflows` to show the CI/CD flow.
 ## Showcase
 
 - [Spotify Web Extension](https://spotify-extension.netlify.app/)
+
+## Thank you
