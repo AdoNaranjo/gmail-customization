@@ -1,4 +1,4 @@
-# Web Extension Boilerplate
+# Gmail Customization Extension
 
 <div align="center">
   <img width="300" src="https://user-images.githubusercontent.com/6290720/118306393-5ab20b80-b524-11eb-9d70-ac7ed740397b.png" />
@@ -6,7 +6,7 @@
   <br />
 </div>
 
-This boilerplate provides a skeleton to start developing cross-browser web extensions.
+This extension provides a customization the gmail to start developing cross-browser web extensions.
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)

@@ -1,7 +1,7 @@
 {
-  "name": "datetime",
+  "name": "gmail customization",
   "version": "1.0",
-  "description": "Build a Datetime Extension!",
+  "description": "Build a Gmail Customization Extension!",
   "permissions": ["activeTab"],
   "manifest_version": 3,
   "background": {
