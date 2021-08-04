@@ -1,21 +1,16 @@
 {
   "compilerOptions": {
-    "module": "ES6",
-    "target": "es6",
+    "jsx": "react",
+    "target": "es6", // ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'.
+    "module": "commonjs", // Module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'.
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "declaration": false,
+    "isolatedModules": true,
+    "useDefineForClassFields": true,
+    "skipLibCheck": true,
     "moduleResolution": "node",
-    "esModuleInterop": true,
-    "noImplicitAny": false,
-    "sourceMap": false,
-    "rootDir": "src",
-    "outDir": "dist/js",
-    "noEmitOnError": true,
-    "typeRoots": [
-      "node_modules/@types",
-      "node_modules/web-ext-types"
-    ],
-    "types": [
-      "jest",
-      "node"
-    ]
-  }
+    "allowJs": true
+  },
+  "include": ["source", "webpack.config.js"],
+  "types": ["jest", "node"]
 }

@@ -1,63 +1,31 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings"
-  ],
-  "parser": "@typescript-eslint/parser",
+  "extends": ["prettier"],
   "parserOptions": {
-    "ecmaVersion": 12,
+    "project": ["./tsconfig.json"],
     "sourceType": "module"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "import"
-  ],
   "rules": {
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
-    "eol-last": [
-      "error",
-      "always"
-    ],
-    "import/newline-after-import": [
+    "no-console": "off",
+    "no-extend-native": "off",
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "class-methods-use-this": "off",
+    "max-classes-per-file": "off",
+    "node/no-missing-import": "off",
+    "node/no-unpublished-import": "off",
+    "node/no-unsupported-features/es-syntax": [
       "error",
       {
-        "count": 1
+        "ignores": ["modules"]
       }
-    ],
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "no-console": "error",
-    "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/no-inferrable-types": "off",
-    "@typescript-eslint/no-unused-vars": "error"
+    ]
+  },
+  "env": {
+    "webextensions": true
   },
   "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
-      }
+    "node": {
+      "tryExtensions": [".tsx"] // append tsx to the list as well
     }
   }
 }

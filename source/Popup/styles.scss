@@ -1,0 +1,33 @@
+@import "../styles/fonts";
+@import "../styles/reset";
+@import "../styles/variables";
+
+body {
+  color: $black;
+  background-color: $greyWhite;
+}
+
+#popup-root {
+  height: 100px;
+  width: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.root__wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.root__wrapper__h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.root__wrapper__h3 {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
