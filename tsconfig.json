@@ -9,7 +9,11 @@
     "useDefineForClassFields": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
-    "allowJs": true
+    "allowJs": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": false,
+    "allowUmdGlobalAccess": true
   },
   "include": ["source", "webpack.config.js"],
   "types": ["jest", "node"]

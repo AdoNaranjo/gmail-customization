@@ -8,8 +8,8 @@ body {
 }
 
 #popup-root {
-  height: 100px;
-  width: 240px;
+  height: 120px;
+  width: 288px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,14 +20,22 @@ body {
 .root__wrapper {
   width: 100%;
   text-align: center;
-}
 
-.root__wrapper__h2 {
-  margin-top: 0;
-  margin-bottom: 0;
-}
+  .root__wrapper__h1 {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 16px;
+  }
 
-.root__wrapper__h3 {
-  margin-top: 5px;
-  margin-bottom: 0;
+  .root__wrapper__h3 {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+
+  .root__wrapper__pointer {
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 20px;
+    text-decoration: underline;
+  }
 }

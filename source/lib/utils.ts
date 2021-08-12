@@ -72,3 +72,21 @@ export function getDisplayDateTime() {
     period: getPeriod(d),
   };
 }
+
+export class FetchClient {
+  async get(url: string, headers?: HeadersInit) {
+    return await new Promise((resolve) => {
+      fetch(url, { method: "get", headers: headers })
+        .then((res) => res.json())
+        .catch((error) => {
+          console.error("Failed to parse json ==== ", error);
+          throw new Error(error);
+        })
+        .then((data) => resolve(data))
+        .catch((error) => {
+          console.error("Failed to resolve ==== ", error);
+          throw new Error(error);
+        });
+    });
+  }
+}
