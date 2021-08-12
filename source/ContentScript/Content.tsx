@@ -98,7 +98,7 @@ const Content: React.FC = () => {
     });
   };
 
-  return <div></div>;
+  return <React.Fragment></React.Fragment>;
 };
 
 export default Content;
