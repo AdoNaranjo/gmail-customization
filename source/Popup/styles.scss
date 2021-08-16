@@ -24,7 +24,7 @@ body {
   .root__wrapper__h1 {
     margin-top: 20px;
     margin-bottom: 0;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .root__wrapper__h3 {
@@ -33,9 +33,7 @@ body {
   }
 
   .root__wrapper__pointer {
-    cursor: pointer;
-    margin-top: 15px;
-    font-size: 20px;
-    text-decoration: underline;
+    display: flex;
+    justify-content: center;
   }
 }

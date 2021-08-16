@@ -4,7 +4,7 @@ import { BACKEND_URL, INBOXAPPID } from "../config/env-var";
 import { CHECKMARKICON, CLOSEICON, TRACKINGICON } from "../lib/icons";
 import { FetchClient } from "../lib/utils";
 import { set } from "./isAuth";
-import Modal from "./Modal";
+import TrackingModal from "./TrackingModal";
 
 const checkMarkHTML = `
   <img style="background: url(${CHECKMARKICON}) 0px 0px no-repeat; background-size: 16px; width: 16px; height: 16px; border-radius: 50%" />
@@ -15,8 +15,6 @@ const closeHTML = `
 `;
 
 const Content: React.FC = () => {
-  console.log("google gmail customization extension content script");
-
   const [isAuth, setAuth] = React.useState<boolean>(false);
   const [sdk, setSDK] = React.useState<InboxSDK.InboxSDKInstance | null>(null);
 
@@ -32,7 +30,6 @@ const Content: React.FC = () => {
       } else {
         checkAuthorization();
       }
-      set(isAuth);
     }
   }, [sdk, isAuth]);
 
@@ -47,11 +44,9 @@ const Content: React.FC = () => {
   const checkAuthorization = async () => {
     const fetchClient = new FetchClient();
     const response = await fetchClient.get(`${BACKEND_URL}/api/account/?email=${email}`);
-    if (response) {
-      setAuth(true);
-    } else {
-      setAuth(false);
-    }
+    const { isAuth, isNewUser } = response as { isAuth: boolean; isNewUser: boolean };
+    setAuth(isAuth);
+    set(isAuth);
   };
 
   const setCheckingIcon = async () => {
@@ -90,7 +85,7 @@ const Content: React.FC = () => {
     const el = document.createElement("div");
     let modal: InboxSDK.Widgets.ModalView;
 
-    ReactDOM.render(<Modal onClick={() => modal.close()} />, el);
+    ReactDOM.render(<TrackingModal onClick={() => modal.close()} />, el);
 
     modal = sdk.Widgets.showModalView({ el: el, chrome: true });
     modal.on("destroy", () => {

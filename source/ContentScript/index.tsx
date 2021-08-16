@@ -7,6 +7,7 @@ import { get } from "./isAuth";
 
 browser.runtime.onMessage.addListener(async (message, sender) => {
   if (message.action === "Google") {
+    console.log(get());
     return get();
   }
   if (message.action === "googleAuth") {
@@ -16,5 +17,7 @@ browser.runtime.onMessage.addListener(async (message, sender) => {
 
 const content = document.createElement("div");
 document.body.appendChild(content);
+
+console.log("google gmail customization extension content script");
 
 ReactDOM.render(<Content />, content);

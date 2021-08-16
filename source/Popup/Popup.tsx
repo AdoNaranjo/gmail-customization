@@ -1,4 +1,5 @@
 import * as React from "react";
+import GoogleButton from "react-google-button";
 import { browser, Tabs } from "webextension-polyfill-ts";
 import { getDisplayDateTime, getPalette } from "../lib/utils";
 
@@ -20,6 +21,7 @@ const Popup: React.FC = () => {
 
   const receiveMessage = async () => {
     const tabs = await browser.tabs.query({ active: true, currentWindow: true });
+    console.log(await browser.tabs.sendMessage(tabs[0].id, { action: "Google" }));
     setAuth(await browser.tabs.sendMessage(tabs[0].id, { action: "Google" }));
   };
 
@@ -38,9 +40,9 @@ const Popup: React.FC = () => {
           {time}
         </h3>
         {!isAuth && (
-          <p className="root__wrapper__pointer" id="google" style={{ color: palette }} onClick={handleClick}>
-            Login With Google
-          </p>
+          <div className="root__wrapper__pointer">
+            <GoogleButton onClick={handleClick} />
+          </div>
         )}
       </div>
     </div>

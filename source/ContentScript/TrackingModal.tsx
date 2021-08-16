@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Modal: React.FC<PropsType> = ({ onClick }) => {
+const TrackingModal: React.FC<PropsType> = ({ onClick }) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -44,4 +44,4 @@ const Modal: React.FC<PropsType> = ({ onClick }) => {
   );
 };
 
-export default Modal;
+export default TrackingModal;
